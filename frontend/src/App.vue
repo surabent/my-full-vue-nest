@@ -12,12 +12,14 @@ const toggleDialog = () => {
 </script>
 
 <template>
-  <div class="p-8 max-w-2xl flex flex-col gap-y-2 items-center">
-    <h1 class="text-2xl font-bold mb-4 text-emerald-800">User Management</h1>
-    <div class="self-end flex flex-row items-end">
+  <div class="flex flex-col px-6 py-2 justify-center gap-y-2">
+    <h1 class="text-3xl font-bold text-emerald-800 text-center">
+      User Management
+    </h1>
+    <div class="flex flex-row justify-end lg:px-20">
       <button class="btn" @click="toggleDialog">ADD USER</button>
     </div>
-    <div class="my-4">
+    <div class="lg:px-20">
       <UserList />
     </div>
     <AddUserDialog v-if="showDialog" @close="toggleDialog" />

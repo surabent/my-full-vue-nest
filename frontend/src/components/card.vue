@@ -22,16 +22,27 @@ const toggleDeleteDialog = () => {
 
 <template>
   <div
-    class="bg-white border-l-blue-500 border-l-4 p-4 rounded shadow flex flex-row justify-between hover:border-l-8 hover:shadow-lg transition-all duration-150 cursor-pointer"
+    class="shadow-lg bg-white rounded-xl px-4 py-2 flex flex-col md:flex-row gap-y-2 justify-start md:justify-between md:items-end"
   >
-    <div class="flex flex-col ml-3 items-start">
-      <h4 class="text-lg font-bold">{{ props.name }}</h4>
-      <p>{{ props.nickname }}</p>
-      <p>{{ props.email }}</p>
-    </div>
-    <div class="flex flex-row items-center gap-x-2">
-      <button class="btn" @click="toggleEditDialog">EDIT</button>
-      <button class="btn-red" @click="toggleDeleteDialog">DELETE</button>
+    <div class="flex flex-col w-full">
+      <div>
+        <h4 class="text-lg font-bold">{{ props.name }}</h4>
+        <div class="w-full h-[2px] bg-blue-600"></div>
+      </div>
+      <div class="flex flex-col md:flex-row md:justify-between gap-y-2">
+        <div>
+          <p class="font-semibold text-gray-700">
+            Nickname: {{ props.nickname }}
+          </p>
+          <p class="text-gray-600">Email: {{ props.email }}</p>
+        </div>
+        <div class="flex flex-row items-end justify-end">
+          <div class="flex flex-row gap-x-2">
+            <button class="btn" @click="toggleEditDialog">EDIT</button>
+            <button class="btn-red" @click="toggleDeleteDialog">DELETE</button>
+          </div>
+        </div>
+      </div>
     </div>
     <EditUserDialog
       v-if="showEditDialog"

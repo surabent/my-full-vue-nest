@@ -1,6 +1,6 @@
 <template>
-  <div class="h-[600px] w-[750px] overflow-y-auto">
-    <ul v-if="users.length" class="space-y-4">
+  <div>
+    <ul v-if="users.length">
       <li v-for="user in users" :key="user.id">
         <Card
           :name="user.name"
