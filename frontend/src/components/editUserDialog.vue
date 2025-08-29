@@ -48,11 +48,12 @@ const updateUser = async () => {
     } finally {
       isLoading.value = false;
     }
+  } else {
+    snackbar.add({
+      type: "error",
+      text: "กรุณากรอกข้อมูลให้ครบถ้วนก่อนการกดแก้ไข",
+    });
   }
-  snackbar.add({
-    type: "error",
-    text: "กรุณากรอกข้อมูลให้ครบถ้วนก่อนการกดแก้ไข",
-  });
 };
 </script>
 

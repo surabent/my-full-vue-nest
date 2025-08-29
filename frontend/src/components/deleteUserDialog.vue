@@ -44,11 +44,12 @@ const deleteUser = async () => {
     } finally {
       isLoading.value = false;
     }
+  } else {
+    snackbar.add({
+      type: "error",
+      text: "ลบข้อมูลผู้ใช้ไม่สำเร็จข้อมูล id ไม่ถูกต้อง",
+    });
   }
-  snackbar.add({
-    type: "error",
-    text: "ลบข้อมูลผู้ใช้ไม่สำเร็จข้อมูล id ไม่ถูกต้อง",
-  });
 };
 </script>
 
@@ -88,7 +89,7 @@ const deleteUser = async () => {
         >
           CANCEL</button
         ><button @click="deleteUser" class="btn-red ml-2" :disabled="isLoading">
-          UPDATE USER
+          DELETE USER
         </button>
       </div>
     </div>
