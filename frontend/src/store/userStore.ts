@@ -1,7 +1,7 @@
 import { defineStore } from "pinia";
 import axios from "axios";
 
-const API_URL = "http://localhost:3000/users"; // ภายหลังจะเปลี่ยนเป็น env
+const API_URL = import.meta.env.VITE_API_URL + "/users";
 
 export const useUserStore = defineStore("user", {
   state: () => ({ users: [] as any[] }),
